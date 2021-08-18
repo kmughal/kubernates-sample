@@ -190,3 +190,13 @@ deployment.apps/mongodb-deployment created ```
 🎉  Opening service default/mongo-express-service in default browser...
 
 ```
+
+- in order to enable ingress controller please use following command :
+  ```  minikube addons enable ingress ``` in order to verify the installation ``` kubectl get pod -n kube-system ```
+
+
+  ### Ingress sample for Kubernates Dashboard
+
+  - enable kubernates dashboard locally: ``` minikube dashboard ```
+  - verify ```  kubectl get all -n kubernetes-dashboard ``` the pod and service is up
+  - you need to change the host file ```  sudo vim /etc/hosts ```
