@@ -175,3 +175,18 @@ mongo-db-secret       opaque                                2      100s
 ```
 - now deploy the mongo deployment by using ``` kubectl apply -f mongo-deployment.yaml 
 deployment.apps/mongodb-deployment created ```
+
+
+- in the mongo-express file under the service you have specified the type as LoadBalance you need an external ip address for that as we are using minikube which work differently. In order to see things ... use the following command 
+
+```
+
+ minikube service mongo-express-service
+|-----------|-----------------------|-------------|---------------------------|
+| NAMESPACE |         NAME          | TARGET PORT |            URL            |
+|-----------|-----------------------|-------------|---------------------------|
+| default   | mongo-express-service |        8081 | http://192.168.64.2:30000 |
+|-----------|-----------------------|-------------|---------------------------|
+🎉  Opening service default/mongo-express-service in default browser...
+
+```

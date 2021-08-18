@@ -35,6 +35,8 @@ spec:
               configMapKeyRef:
                 name: mongo-config
                 key: database_url
+          - name: ME_CONFIG_MONGODB_ENABLE_ADMIN
+            value: "true"
 ---
 apiVersion: v1
 kind: Service
@@ -43,7 +45,7 @@ metadata:
 spec:
   selector:
     app: mongo-express
-  type: LoadBalancer 
+  type: LoadBalancer
   ports:
     - protocol: TCP
       port: 8081
