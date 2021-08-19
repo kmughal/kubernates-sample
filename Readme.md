@@ -199,4 +199,5 @@ deployment.apps/mongodb-deployment created ```
 
   - enable kubernates dashboard locally: ``` minikube dashboard ```
   - verify ```  kubectl get all -n kubernetes-dashboard ``` the pod and service is up
+  - once you apply the ingress file to check : ```kubectl get ingress  -n kubernetes-dashboard ```
   - you need to change the host file ```  sudo vim /etc/hosts ```
