@@ -201,3 +201,40 @@ deployment.apps/mongodb-deployment created ```
   - verify ```  kubectl get all -n kubernetes-dashboard ``` the pod and service is up
   - once you apply the ingress file to check : ```kubectl get ingress  -n kubernetes-dashboard ```
   - you need to change the host file ```  sudo vim /etc/hosts ```
+
+
+## Helm
+
+It is a package manager for kubernates. This enables you to package yaml files and distribute to private and public repos.
+
+### Helm Chart
+
+- Yaml files which are packaged together is referred as Helm chart.
+- Helm 2 has Client and Server(which is called Tiller). So when you type helm install <chartname> => this is send to the Server (Tiller).
+- Helm 3 the Tiller is removed due to security and control issue.
+
+### Kubernates Volume
+
+- persistent volume => folder where you store files
+- persistent volume claim
+- storage claim
+
+admin creates volumes and user claim those volume!
+So in short 
+
+- volume is a directory with some data.
+- volumes are accessible in container in a pod.
+- storage class automates the process of creating volumes which can be later on claimed. For storage class you set up the yaml file where you tell about which provisiner to use which are internal to kubernates.
+
+### Stateful set and Stateful application
+
+- old databases -> posgres , sql , elastic search
+- stateless applications are deployed using deployments
+- stateful applications are deployed using statefulSet.
+
+### Kubernates Services
+
+- ClusterIP Service
+- NodePort Service
+- Headless Service
+- LoadBalancer Service
